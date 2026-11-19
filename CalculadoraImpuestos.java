@@ -6,9 +6,9 @@
  */
 public class CalculadoraImpuestos{
     //Constantes de la clase CalculadoraImpuestos
-    public static final double TASA_IVA_GENERAL = 0.21;
+    public static final double TASA_IVA_GENERAL = 0.23;
     public static final double TASA_RETENCION_IRPF = 0.15;
-    public static final double COSTE_ENVIO_ESTANDAR = 4.99;
+    public static final double COSTE_ENVIO_ESTANDAR = 5.50;
     public static final double UMBRAL_AVISO_PEDIDO = 100.0;
     
     //Atributos de la clase
@@ -16,7 +16,6 @@ public class CalculadoraImpuestos{
     
     /**
      * Calcula el desglose de una factura aplicando impuestos
-     * Usa NÚMEROS MÁGICOS, mala práctica
      */
     public void calcularTotalFactura(double subtotal){
         //Comprobación si existe cliente
