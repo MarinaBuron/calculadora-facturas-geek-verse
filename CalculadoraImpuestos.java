@@ -5,6 +5,11 @@
  * @version 1.0
  */
 public class CalculadoraImpuestos{
+    //Constantes de la clase CalculadoraImpuestos
+    public static final double TASA_IVA_GENERAL = 0.21;
+    public static final double TASA_RETENCION_IRPF = 0.15;
+    public static final double COSTE_ENVIO_ESTANDAR = 4.99;
+    public static final double UMBRAL_AVISO_PEDIDO = 100.0;
     
     /**
      * Calcula el desglose de una factura aplicando impuestos
@@ -12,9 +17,9 @@ public class CalculadoraImpuestos{
      */
     public void calcularTotalFactura(double subtotal){
         //Números mágicos
-        double tasaIVA = 0.21;
-        double tasaRetencion = 0.15;
-        double costeEnvio = 4.99;
+        double tasaIVA = TASA_IVA_GENERAL;
+        double tasaRetencion = TASA_RETENCION_IRPF;
+        double costeEnvio = COSTE_ENVIO_ESTANDAR;
         
         double iva = subtotal * tasaIVA;
         double retencion = subtotal * tasaRetencion;
@@ -22,14 +27,14 @@ public class CalculadoraImpuestos{
         
         System.out.println("----Facturada Detallada----");
         System.out.println("Subtotal: " + subtotal);
-        System.out.println("IVA (21%): " + iva);
-        System.out.println("Retencion (15%): " + retencion);
-        System.out.println("Envío: " + costeEnvio);
+        System.out.println("IVA (" + (TASA_IVA_GENERAL * 100) + "%): " + iva);
+        System.out.println("Retencion (" + (TASA_RETENCION_IRPF * 100) + "%): " + retencion);
+        System.out.println("Envío (" + (COSTE_ENVIO_ESTANDAR * 100) + "%): " + costeEnvio);
         System.out.println("TOTAL: " + total);
         
         //Otro número mágico
-        if (total > 100.0){
-            System.out.println("Aviso: Su pedido supera los 100.0 euros.");
+        if (total > UMBRAL_AVISO_PEDIDO){
+            System.out.println("Aviso: Su pedido supera los " + UMBRAL_AVISO_PEDIDO + " euros");
         }
     }
     
